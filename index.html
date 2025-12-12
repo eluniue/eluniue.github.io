@@ -8,12 +8,12 @@
 <body>
   <h1>AquaCaptor</h1>
   <nav>
-  <a href="#vision">Vision</a>
-  <a href="#mission">Mission</a>
-  <a href="#problem">Problem</a>
-  <a href="#solution">Solution</a>
-  <a href="#prototype">Prototype</a>
-  <a href="#outcomes">Outcomes</a>
+<a href="#" onclick="showSection('vision')">Vision</a>
+<a href="#" onclick="showSection('mission')">Mission</a>
+<a href="#" onclick="showSection('problem')">Problem</a>
+<a href="#" onclick="showSection('solution')">Solution</a>
+<a href="#" onclick="showSection('prototype')">Prototype</a>
+<a href="#" onclick="showSection('outcomes')">Outcomes</a>
 </nav>
 
 <hr>
@@ -25,42 +25,68 @@
   <p><strong>University:</strong> Hacettepe University</p>
   <hr>
 
-<h2 id="vision">Project Vision</h2>
-<p>
+<section id="vision" class="content-section">
+  <h2>Project Vision</h2>
+  <p>
 AquaCaptor aims to contribute to sustainable water access by developing
 an atmospheric water capture concept based on MOF/Salt composite materials.
 </p>
+</section>
 
-<h2 id="mission">Project Mission</h2>
-<p>
+<section id="mission" class="content-section">
+  <h2>Project Mission</h2>
+  <p>
 The mission of AquaCaptor is to investigate material-based atmospheric
 water harvesting mechanisms and propose an engineering-oriented prototype.
 </p>
+</section>
 
-<h2 id="problem">Problem Definition</h2>
-<p>
+<section id="problem" class="content-section">
+  <h2>Problem</h2>
+  <p>
 Freshwater scarcity and uneven water distribution create a need for
 decentralized and low-energy water harvesting solutions.
 </p>
+</section>
 
-<h2 id="solution">Proposed Solution</h2>
-<p>
+<section id="solution" class="content-section">
+  <h2>Proposed Solution</h2>
+  <p>
 AquaCaptor utilizes MOF/Salt composite adsorbents to capture atmospheric
 moisture under low relative humidity conditions.
 </p>
+</section>
 
-<h2 id="prototype">Prototype Concept</h2>
-<p>
+<section id="prototype" class="content-section">
+  <h2>Prototype Consept</h2>
+  <p>
 The prototype consists of a modular adsorption unit containing MOF/Salt
 composite materials with passive or low-energy desorption.
 </p>
+</section>
+
 
 <h2 id="outcomes">Expected Outcomes</h2>
 <ul>
-  <li>Conceptual prototype design</li>
-  <li>Material selection rationale</li>
-  <li>Feasibility analysis</li>
+  <li>Conceptual design of a MOF/Salt-based atmospheric water harvesting system</li>
+  <li>Justification of material selection based on adsorption and desorption characteristics</li>
+  <li>Evaluation of the feasibility of low-energy atmospheric water capture</li>
+  <li>Preliminary assessment of potential applications in water-stressed regions</li>
 </ul>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    document.getElementById(id).style.display = 'block';
+  }
+
+  // Sayfa ilk açıldığında sadece Vision görünsün
+  showSection('vision');
+</script>
 
 </body>
 </html>
@@ -81,5 +107,9 @@ nav a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+.content-section {
+  display: none;
+  margin-top: 40px;
 }
 
