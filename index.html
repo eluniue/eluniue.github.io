@@ -7,15 +7,15 @@
 </head>
 <body>
   <h1>AquaCaptor</h1>
-  <nav>
-<a href="#" onclick="showSection('vision')">Vision</a>
-<a href="#" onclick="showSection('mission')">Mission</a>
-<a href="#" onclick="showSection('problem')">Problem</a>
-<a href="#" onclick="showSection('solution')">Solution</a>
-<a href="#" onclick="showSection('prototype')">Prototype</a>
-<a href="#" onclick="showSection('outcomes')">Outcomes</a>
+<nav>
+  <a href="#" onclick="showSection('home'); return false;">Home</a>
+  <a href="#" onclick="showSection('vision'); return false;">Vision</a>
+  <a href="#" onclick="showSection('mission'); return false;">Mission</a>
+  <a href="#" onclick="showSection('problem'); return false;">Problem</a>
+  <a href="#" onclick="showSection('solution'); return false;">Solution</a>
+  <a href="#" onclick="showSection('prototype'); return false;">Prototype</a>
+  <a href="#" onclick="showSection('outcomes'); return false;">Outcomes</a>
 </nav>
-
 <hr>
 
 
@@ -24,13 +24,33 @@
   <p><strong>Group:</strong> Group 10</p>
   <p><strong>University:</strong> Hacettepe University</p>
   <hr>
+<section id="home" class="content-section">
+  <h2>Project Overview</h2>
+
+  <p><strong>Project type:</strong> AquaCaptor</p>
+  <p><strong>Description:</strong> Atmospheric water capture with MOF/Salt composite.</p>
+  <p><strong>Group:</strong> Group 10</p>
+  <p><strong>University:</strong> Hacettepe University</p>
+
+  <h3>What is AquaCaptor?</h3>
+  <p>
+    AquaCaptor is a concept-level atmospheric water harvesting project that explores
+    MOF/Salt composite adsorbents to capture moisture from air under low relative humidity.
+  </p>
+
+  <h3>Why it matters</h3>
+  <p>
+    The project targets decentralized, low-energy water production for water-stressed regions
+    where conventional infrastructure is limited.
+  </p>
+</section>
 
 <section id="vision" class="content-section">
   <h2>Project Vision</h2>
   <p>
 AquaCaptor aims to contribute to sustainable water access by developing
 an atmospheric water capture concept based on MOF/Salt composite materials.
-</p>...</p>
+</p>
 </section>
 
 <section id="mission" class="content-section">
@@ -38,7 +58,7 @@ an atmospheric water capture concept based on MOF/Salt composite materials.
   <p>
 The mission of AquaCaptor is to investigate material-based atmospheric
 water harvesting mechanisms and propose an engineering-oriented prototype.
-</p>...</p>
+</p>
 </section>
 
 <section id="problem" class="content-section">
@@ -46,7 +66,7 @@ water harvesting mechanisms and propose an engineering-oriented prototype.
   <p>
 Freshwater scarcity and uneven water distribution create a need for
 decentralized and low-energy water harvesting solutions.
-</p>...</p>
+</p>
 </section>
 
 <section id="solution" class="content-section">
@@ -54,7 +74,7 @@ decentralized and low-energy water harvesting solutions.
   <p>
 AquaCaptor utilizes MOF/Salt composite adsorbents to capture atmospheric
 moisture under low relative humidity conditions.
-</p>...</p>
+</p>
 </section>
 
 <section id="prototype" class="content-section">
@@ -62,7 +82,7 @@ moisture under low relative humidity conditions.
   <p>
 The prototype consists of a modular adsorption unit containing MOF/Salt
 composite materials with passive or low-energy desorption.
-</p>...</p>
+</p>
 </section>
 
 
@@ -75,7 +95,7 @@ composite materials with passive or low-energy desorption.
   <li>Evaluation of the feasibility of low-energy atmospheric water capture</li>
   <li>Preliminary assessment of potential applications in water-stressed regions</li>
 </ul>
-</p>...</p>
+</p>
 </section>
   
 <script>
@@ -91,7 +111,14 @@ composite materials with passive or low-energy desorption.
   // Sayfa ilk açıldığında sadece Vision görünsün
   showSection('vision');
 </script>
-
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+    const target = document.getElementById(id);
+    if (target) target.style.display = 'block';
+  }
+  showSection('home'); // sayfa açılınca Home gelsin
+</script>
 </body>
 </html>
 nav {
